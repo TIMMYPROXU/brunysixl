@@ -94,8 +94,8 @@ h3 {
 }
 
 button {
-  background: linear-gradient(to bottom, #000000, #4400ff); 
-  color: #ffffff; 
+  background: linear-gradient(to bottom, #000000, #ffffff); 
+  color: #000; 
   font-weight: bold; 
   padding: 15px 20px; 
   border: #4400ff; 
