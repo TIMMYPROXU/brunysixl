@@ -81,6 +81,13 @@ iframe {
   transform: translateY(-4rem);
 }
 
+h1 {
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+
 h2 {
   font-weight: bold;
   text-align: center;
