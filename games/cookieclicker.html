@@ -20,68 +20,7 @@ body {
   <div>
    
 <div class="controls">
-      <img src=" " width="40px" height="40px" onclick="window.location.href='/';">
-        <link rel="shortcut icon" href="ezgif-5-41dee13eff.gif" sizes="192x192" type="image/png">
-      <h2>Cookie Clicker</h2>
-      <button class="cyan" onclick="goFullscreen('file'); return false">Fullscreen</button>
-      <script>document.body.addEventListener("keydown", function (event) {
-        if (event.key === "F12") {
-            window.location.replace("https://google.com");
-        }
-    });</script>
-<script>
-function goFullscreen(id) {
-    var element = document.getElementById(id);
-    if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullScreen) {
-      element.webkitRequestFullScreen();
-    }
-}
-</script>
-
-
-	<button class="cyan" onclick="toggleScript()">Enable Chat</button>
-	<script>
-		function createScript() {
-			var script = document.createElement("script");
-			script.id = "discord";
-			script.src = "https://cdn.jsdelivr.net/npm/@widgetbot/crate@3";
-			script.innerHTML = "new Crate({ server: '975549006841270312', channel: '1042980843704025158' });";
-			document.body.appendChild(script);
-		}
-
-		function deleteScript() {
-			var script = document.getElementById("discord");
-			if (script) {
-				document.body.removeChild(script);
-			}
-		}
-
-		function toggleScript() {
-			var script = document.getElementById("discord");
-			if (script) {
-				deleteScript();
-			} else {
-				createScript();
-			}
-		}
-	</script>
-
-		<button class="cyan" onclick="toggleWidgetBot(); deleteDiscord()">Disable Chat</button>
-	<script>
-		function toggleWidgetBot() {
-			var widgetbot = document.getElementsByTagName("widgetbot-crate")[0];
-			if (widgetbot) {
-				widgetbot.parentNode.removeChild(widgetbot);
-			} else {
-				widgetbot = document.createElement("widgetbot-crate");
-				widgetbot.src = "https://widgetbot.io";
-				widgetbot.docs = "docs.widgetbot.io";
-				document.body.appendChild(widgetbot);
-			}
-		}
-	</script>
+      
   	<script>
       function deleteDiscord() {
         var script = document.getElementById("discord");
