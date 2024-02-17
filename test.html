@@ -41,13 +41,13 @@ function goFullscreen(id) {
 </script>
 
 
-	<button class="cyan" onclick="toggleScript()">Enable Chat</button>
+	<button class="cyan" onclick="toggleScript()">Open Discord Chatroom</button>
 	<script>
 		function createScript() {
 			var script = document.createElement("script");
 			script.id = "discord";
 			script.src = "https://cdn.jsdelivr.net/npm/@widgetbot/crate@3";
-			script.innerHTML = "new Crate({ server: '975549006841270312', channel: '1042980843704025158' });";
+			script.innerHTML = "new Crate({ server: '1154528719264821248', channel: '1207033719353778247' });";
 			document.body.appendChild(script);
 		}
 
@@ -68,7 +68,7 @@ function goFullscreen(id) {
 		}
 	</script>
 
-		<button class="cyan" onclick="toggleWidgetBot(); deleteDiscord()">Disable Chat</button>
+		<button class="cyan" onclick="toggleWidgetBot(); deleteDiscord()">Close discord Chatroom</button>
 	<script>
 		function toggleWidgetBot() {
 			var widgetbot = document.getElementsByTagName("widgetbot-crate")[0];
