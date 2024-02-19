@@ -52,6 +52,7 @@ body {
     <hr class="cyan">
     <h2>Contact Us!</h2>
      <button onclick="window.open('https://discord.gg/zrNunHbyaS');">Contact Us by Clicking Here</button>
+	  <button onclick="window.location.href='/discord.html';">Also contact Us Here!</button>
     <hr class="cyan">
     <h2>Running Version: 4.0!</h2>
     <h3>Welcome to brunysixl – the ultimate destination for fun and gaming without the hassle of restrictions. Dive into a carefully curated selection of games spanning various subjects, designed to add a playful twist to your school experience. Enjoy a secure, approved platform accessible from any device, where gaming meets entertainment seamlessly. Say goodbye to blocked access and hello to a world where every game is a gateway to both knowledge and enjoyment.</h3>
@@ -84,29 +85,5 @@ body {
     }
   </style>
 
-<script>
-		function createScript() {
-			var script = document.createElement("script");
-			script.id = "discord";
-			script.src = "https://cdn.jsdelivr.net/npm/@widgetbot/crate@3";
-			script.innerHTML = "new Crate({ server: '1154528719264821248', channel: '1185403281581817976' });";
-			document.body.appendChild(script);
-		}
 
-		function deleteScript() {
-			var script = document.getElementById("discord");
-			if (script) {
-				document.body.removeChild(script);
-			}
-		}
-
-		function toggleScript() {
-			var script = document.getElementById("discord");
-			if (script) {
-				deleteScript();
-			} else {
-				createScript();
-			}
-		}
-	</script>
 
