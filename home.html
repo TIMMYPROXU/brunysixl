@@ -17,14 +17,14 @@ body {
 
   
   <p align="center">
-  <img width="300" height="300" src="ezgif-5-41dee13eff.gif">
+  <img width="300" height="300" src="ezgif-5-c2d6c618ca.gif">
 </p>
   
 
   <div>
     <h1>brunysixl V4</h1>
     <h2>brunysixl. redifining the unblocked games network :)</h2>
-  <h3>fact of the week!: A group of flamingos is called a "flamboyance"!</h3>
+  <h3>fact of the week!: The Creator of brunysixl likes bears! Which explains the logo lol.</h3>
   <h3>Cmd+D Ctrl+D</h3>
   <hr class="cyan">
     <h2>Here Are Our Amazing Website Options :)</h2>
@@ -42,7 +42,7 @@ body {
     <hr class="cyan">
     <h2>Our Seperate Options!</h2>
      <button onclick="window.location.href='/partners.html';">👥Partners</button>
-   <button onclick="window.open('https://sites.google.com/view/brunyold');">🏠Old Homepage</button>
+   <button onclick="window.open('https://sites.google.com/view/brunysixlworkv2-0/home');">🏠Old Homepage</button>
     <hr class="cyan">
     <h2>Our Epic Social Medias!!</h2>
      <button onclick="window.open('https://www.youtube.com/channel/UCiUcqkF0e3XPt7SqoH4Py8Q');">📹YouTube</button>
@@ -52,6 +52,7 @@ body {
     <hr class="cyan">
     <h2>Contact Us!</h2>
      <button onclick="window.open('https://discord.gg/zrNunHbyaS');">Contact Us by Clicking Here</button>
+	  <button onclick="window.location.href='/discord.html';">Also contact Us Here!</button>
     <hr class="cyan">
     <h2>Running Version: 4.0!</h2>
     <h3>Welcome to brunysixl – the ultimate destination for fun and gaming without the hassle of restrictions. Dive into a carefully curated selection of games spanning various subjects, designed to add a playful twist to your school experience. Enjoy a secure, approved platform accessible from any device, where gaming meets entertainment seamlessly. Say goodbye to blocked access and hello to a world where every game is a gateway to both knowledge and enjoyment.</h3>
@@ -59,36 +60,10 @@ body {
 </body>
 </html>
 
-<!--Scripts-->
-<script>
-async function registerSW() {    
-  const workerURL = "./sw.js";
-  const worker = await navigator.serviceWorker.getRegistration(workerURL, {
-    scope: __uv$config.prefix,
-  });
-  return navigator.serviceWorker.register(workerURL, { scope: __uv$config.prefix });
-}
-function proxy(url) {
-  registerSW().then(worker => {   
-    window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
-  });
-}
-function goNowgg() {
-  var url = document.getElementById("url").value;  
-  var regex = /^https:\/\/now\.gg\/play\/([^/]+)\/(\d+)\/([^/]+)$/;
-  if (regex.test(url)) {
-    proxy(url);
-  } else {
-    alert("Please enter a valid Now.gg URL and try again (Use https:// at the start of your URL)!");
-  }
-}
-</script>
-<!--Ultraviolet Scripts-->
-<script src="uv/uv.bundle.js"></script>
-<script src="uv/uv.config.js"></script>
 
-<title>Math Practice</title>
-<link rel="shortcut icon" id="tab-favicon" href="brunysf.png" />
+
+<link rel="shortcut icon" id="dynamic-favicon" href="brunysixlfavicon.png">
+    <title id="dynamic-title">Math Practice | Home</title>
  <style>
     p{
       color: white
@@ -110,28 +85,4 @@ function goNowgg() {
     }
   </style>
 
-<script>
-		function createScript() {
-			var script = document.createElement("script");
-			script.id = "discord";
-			script.src = "https://cdn.jsdelivr.net/npm/@widgetbot/crate@3";
-			script.innerHTML = "new Crate({ server: '1154528719264821248', channel: '1185403281581817976' });";
-			document.body.appendChild(script);
-		}
 
-		function deleteScript() {
-			var script = document.getElementById("discord");
-			if (script) {
-				document.body.removeChild(script);
-			}
-		}
-
-		function toggleScript() {
-			var script = document.getElementById("discord");
-			if (script) {
-				deleteScript();
-			} else {
-				createScript();
-			}
-		}
-	</script>
