@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('YOUR_BACKGROUND_IMAGE_URL') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #footer {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <a href="YOUR_LINK_URL" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><img src="YOUR_IMAGE_URL" alt="Image" width="40" height="40"></a>
+    <div id="content">
+        <!-- Embedded webpage -->
+        <iframe src="YOUR_EMBEDDED_WEBPAGE_URL" width="80%" height="400"></iframe>
+    </div>
+    <div id="footer">
+        <h5>Your footer content here</h5>
+    </div>
+</body>
+</html>
