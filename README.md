@@ -1,7 +1,30 @@
-                                    <brunysixl> brunysixl ovar 9000! </brunysixl>
 
  <p align="center">
+   <h1>  brunysixl ovar 9000!!! </h1>
   <img width="200" height="200" src="brunysixlgiflogo.gif">
+   <h1>I made brunysixl simply because i was bored ¯\_(ツ)_/¯</h1>
 </p>
   
-                            <brunysixl> I made this because I was bored ¯\_(ツ)_/¯ </brunysixl>
+ <style>
+    p{
+      color: white
+    }
+	    h1{
+      color: white
+    }
+    h2{
+      color: white
+    }
+    h5{
+      color: white;
+    }
+    h4{
+      color: white;
+    }
+    body{
+      text-align: center;
+    }
+    a{
+      text-align: left;
+    }
+  </style>
