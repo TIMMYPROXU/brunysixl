@@ -5,26 +5,3 @@
    <h1>I made brunysixl simply because i was bored ¯\_(ツ)_/¯</h1>
 </p>
   
- <style>
-    p{
-      color: white
-    }
-	    h1{
-      color: white
-    }
-    h2{
-      color: white
-    }
-    h5{
-      color: white;
-    }
-    h4{
-      color: white;
-    }
-    body{
-      text-align: center;
-    }
-    a{
-      text-align: left;
-    }
-  </style>
