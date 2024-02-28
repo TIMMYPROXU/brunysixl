@@ -1,0 +1,241 @@
+<html lang="en"><head>
+	
+	<meta charset="utf-8">
+	
+	<title>Friday Night Funkin Suicide Mouse - TBG95</title>
+	<meta name="description" content="Play FNF vs Scuicide Mouse Mod on TBG95. TBG95, an unblocked games website with the best unblocked games across the internet, for free!.">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	
+	<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202402210101/reactive_library_fy2021.js"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202402210101/show_ads_impl_fy2021.js"></script><script type="text/javascript" src="//tbg95.github.io/cloak.js"></script>
+	
+	<script type="text/javascript" src="./PsychEngine.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content { background: #000000; width: 100%; height: 100%; }
+		@font-face {
+			font-family: 'Pixel Arial 11 Bold';
+			src: url('assets/fonts/pixel.eot?#iefix') format('embedded-opentype'),
+			url('assets/fonts/pixel.woff') format('woff'),
+			url('assets/fonts/pixel.otf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'VCR OSD Mono';
+			src: url('assets/fonts/vcr.eot?#iefix') format('embedded-opentype'),
+			url('assets/fonts/vcr.woff') format('woff'),
+			url('assets/fonts/vcr.ttf') format('truetype'),
+			url('assets/fonts/vcr.svg#VCR%20OSD%20Mono') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Nokia Cellphone FC Small';
+			src: url('flixel/fonts/nokiafc22.eot?#iefix') format('embedded-opentype'),
+			url('flixel/fonts/nokiafc22.woff') format('woff'),
+			url('flixel/fonts/nokiafc22.ttf') format('truetype'),
+			url('flixel/fonts/nokiafc22.svg#Nokia%20Cellphone%20FC%20Small') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Monsterrat';
+			src: url('flixel/fonts/monsterrat.eot?#iefix') format('embedded-opentype'),
+			url('flixel/fonts/monsterrat.woff') format('woff'),
+			url('flixel/fonts/monsterrat.ttf') format('truetype'),
+			url('flixel/fonts/monsterrat.svg#Monsterrat') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+	</style>
+	
+<style>
+    button.in-game-button {
+        position: absolute;
+        z-index: 9999;
+        top: 61px;
+        left: 0;
+        width: 75px;
+        height: 50px;
+        background: #fff;
+        border-radius: 0 290486px 290486px 0;
+        color: #000;
+        padding: 0 10px;
+        line-height: 50px;
+        min-height: 50px;
+        border: none;
+        border-bottom: 3px solid #b5b5b5;
+        will-change: transform;
+        animation: bounceY 2s .5s;
+        transition: transform .5s cubic-bezier(.55,0,.1,1);
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    
+    button.in-game-button svg {
+        pointer-events: none;
+        color: #b5b5b5;
+        margin-right: .625rem;
+        display: inline-block
+    }
+    
+    button.in-game-button img {
+        pointer-events: none;
+        width: 30px
+    }
+    
+    button.in-game-button:active {
+        background: #1ec2e5
+    }
+    
+    button.in-game-button[attr-active=true] {
+        transform: translateX(0)
+    }
+    
+    @media(max-height: 350px) and (orientation:landscape) {
+        button.in-game-button[attr-active=true] {
+            transform:translateX(-75px)
+        }
+    }
+    
+    button.in-game-button[attr-snapped=true] svg {
+        display: none
+    }
+    
+    button.in-game-button[attr-snapped=true] img {
+        transform: translate(-5px)
+    }
+    
+    i.in-game-trash {
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff
+    }
+    
+    i.in-game-trash,i.in-game-trash svg {
+        transform: scale(0);
+        position: absolute
+    }
+    
+    i.in-game-trash svg {
+        z-index: 2;
+        left: 20px;
+        bottom: 20px;
+        fill: #fff;
+        will-change: transform;
+        transition: transform .1s cubic-bezier(.55,0,.1,1)
+    }
+    
+    i.in-game-trash:before {
+        content: " ";
+        position: absolute;
+        z-index: 1;
+        bottom: -100px;
+        left: -100px;
+        width: 200px;
+        height: 200px;
+        transform: scale(0);
+        border-radius: 100%;
+        background-color: transparent;
+        will-change: transform,background-color;
+        transition: transform .5s cubic-bezier(.55,0,.1,1),background-color .2s cubic-bezier(.55,0,.1,1)
+    }
+    
+    i.in-game-trash[attr-active=true] {
+        transform: scale(1)
+    }
+    
+    i.in-game-trash[attr-active=true] svg {
+        transition-duration: .8s;
+        transform: scale(1)
+    }
+    
+    i.in-game-trash[attr-active=true]:before {
+        transform: scale(1);
+        background-color: #ed1c24
+    }
+    
+    i.in-game-trash[attr-inrange=true] svg {
+        transition-duration: .2s;
+        transform: scale(0)
+    }
+    
+    i.in-game-trash[attr-inrange=true]:before {
+        transform: scale(1.2);
+        background-color: #ed1c24
+    }
+    .main-nav {
+        z-index: 999;
+        overflow-y: auto;
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateX(105%);
+        height: 100%;
+        transition: .3s ease-in-out;
+        background: #f5f5f5;
+        width: 39.5rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding:20px;
+        color:black;
+    }
+    .main-nav.open {
+        transform: translateX(0);
+    }
+    #post{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #3f3424;
+    }
+    #claimBtn{right:0;border-radius: 290486px 0 0 290486px;left:auto}
+    </style><script src="https://www.googletagmanager.com/gtag/js?id=G-3HQGV5BC38" type="text/javascript" crossorigin="anonymous"></script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925" type="text/javascript" crossorigin="anonymous" data-checked-head="true"></script><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-7889675448259925?ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxWGpCewK1zaHQq-ahV7puI1BQ6XHzVdncLsLFa3vwuSzn2b_QKMmR0CHW9x5ajRMuWDE1EKKCNZNfyMbM9L3Vi6FcL0oIb_ZoeuAs03LmUTj511mT5DQIQX5Jnyf3Okx4YacFKGCA==?fccs=W1siQUtzUm9sLU5oNlZmaEh0SUgxSjV6MGExTzcwN19sVFdWWFMtT29KcjltU2M4S0FwbTZqaFI2c1dsU2piLWw1clRTTVdIdTdYaFc2MU05NllfQ3UwM25rYXhRNkpNcExhaXJ2QWpyM0Y4Y0U3RDRfZ3hoNktRdW9LWmR1Qk9adEtuLXUzaE9CQTJ3Y3V5RlpkemZFOGZoRWk1cGQxSkl6aTNBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3MDkwNzk4MjYsNTQwMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3RiZzk1LmdpdGh1Yi5pby9mbmYtdnMtc3VpY2lkZS1tb3VzZS8iLG51bGwsW1s4LCJkVXI4YlgxWlFIYyJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbMF1dXSJdLFsxOSwiMiJdLFsxNywiWzBdIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxX_BpvDVmf5yaEHM-T23hB9qSvxoLN_D1kky0FJHZZXL7l6idE3zhPwGv7CkOCqhkyI4KY2Bh3gC3OhvXLTv8UENKd8SFhTbUchLt_7nxsBnPWVN3jQlTlaanUC_WdbHAsgO3MDFw==?fccs=W1siQUtzUm9sLU5oNlZmaEh0SUgxSjV6MGExTzcwN19sVFdWWFMtT29KcjltU2M4S0FwbTZqaFI2c1dsU2piLWw1clRTTVdIdTdYaFc2MU05NllfQ3UwM25rYXhRNkpNcExhaXJ2QWpyM0Y4Y0U3RDRfZ3hoNktRdW9LWmR1Qk9adEtuLXUzaE9CQTJ3Y3V5RlpkemZFOGZoRWk1cGQxSkl6aTNBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3MDkwNzk4MjYsNjkxMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5XSxudWxsLDIsbnVsbCwiZW4iXSwiaHR0cHM6Ly90Ymc5NS5naXRodWIuaW8vZm5mLXZzLXN1aWNpZGUtbW91c2UvIixudWxsLFtbOCwiZFVyOGJYMVpRSGMiXSxbOSwiZW4tVVMiXSxbMTgsIltbWzBdXV0iXSxbMTksIjIiXSxbMTcsIlswXSJdXV0"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXZJRxJN3c-i0jetaT7-BTtCnGGB7K7W8I0FOhzy31Dp1i1N5LtPg4M2fQ4G6bMDAW8UbVc2s1MxBFSlE0Oolnnv4vaUDx46X2tTuyRPYOP0bUJBHE4_1-KSyC9ar-rJJICw4-qHg==?fccs=W1siQUtzUm9sLU5oNlZmaEh0SUgxSjV6MGExTzcwN19sVFdWWFMtT29KcjltU2M4S0FwbTZqaFI2c1dsU2piLWw1clRTTVdIdTdYaFc2MU05NllfQ3UwM25rYXhRNkpNcExhaXJ2QWpyM0Y4Y0U3RDRfZ3hoNktRdW9LWmR1Qk9adEtuLXUzaE9CQTJ3Y3V5RlpkemZFOGZoRWk1cGQxSkl6aTNBPT0iXSxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsWzE3MDkwNzk4MjgsMzQ4MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5LDZdLG51bGwsMixudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3RiZzk1LmdpdGh1Yi5pby9mbmYtdnMtc3VpY2lkZS1tb3VzZS8iLG51bGwsW1s4LCJkVXI4YlgxWlFIYyJdLFs5LCJlbi1VUyJdLFsxOCwiW1tbMF1dXSJdLFsxOSwiMiJdLFsxNywiWzBdIl1dXQ"></script></head>
+<body style="padding: 0px;">
+	<div class="main-nav" id="post">
+		<h1>Friday Night Funkin Suicide Mouse</h1>
+		<p>Are you ready to play the ultimate Friday Night Funkin battle? Suicide Mouse is a new addition to FNF Mods. The playability of Suicide Mouse Mod is good although extremely difficult in the final stages.</p>
+		<h2>More Games</h2>
+		<p>If you like Friday Night Funkin Suicide Mouse Unblocked and  <a href="https://tbg95.github.io" title="TBG95 Unblocked Games">TBG95 Games</a>. You can play another unblocked games on TBG95. This is list similar games: <br>
+		  </p><ul>
+			<li><a href="https://tbg95.github.io/fnf-vs-sunday-remastered/" title="Friday Night Funkin Sunday Remastered">Friday Night Funkin Sunday Remastered</a></li>
+			<li><a href="https://tbg95.github.io/fnf-vs-trollface-trollge/" title="Funkin Physics: Vs Corruptus">Funkin Physics: Vs Corruptus</a></li>
+			
+			<li><a href="https://tbg95.github.io/fnf-vs-tabi-ex-boyfriend/" title="Friday Night Funkin' VS Tabi">Friday Night Funkin' VS Tabi</a></li>
+		  </ul>
+		<p></p>
+	</div>
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	
+	<div id="openfl-content" style="cursor: none;"><canvas width="1280" height="720" style="transform: translateZ(0px); width: 902px; height: 507px; margin-left: 0px; margin-top: 94px;"></canvas></div>
+	
+	<script type="text/javascript">
+		lime.embed ("PsychEngine", "openfl-content", 1280, 720, { parameters: {} });
+	</script>
+	<script>joinUrl = "vs-suicide-mouse";</script>
+
+	
+
+
+<button class="in-game-button" id="inGame">
+    <svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><!-- <i class="fas fa-chevron-left"></i> Font Awesome fontawesome.com -->
+    <img src="https://tbg95.github.io/icon36.png" width="36" height="36" alt="Logo"></button><button id="claimBtn" class="in-game-button"><div id="gift" class="fa-stack fa-4x" style="display:flex"> <img src="https://tbg95.github.io/info.png">
+</div></button><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7889675448259925&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1657296500&amp;plaf=7%3A2&amp;plat=1%3A16777216%2C3%3A128%2C4%3A128%2C9%3A134250504%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;plas=135x624_l&amp;format=0x0&amp;url=https%3A%2F%2Ftbg95.github.io%2Ffnf-vs-suicide-mouse%2F&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;aseiel=1~2~4~6~8~9~10~11~12~13~14~15~16~17&amp;itsi=0&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIyLjAuNjI2MS43MCIsbnVsbCwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjEyMi4wLjYyNjEuNzAiXSxbIk5vdChBOkJyYW5kIiwiMjQuMC4wLjAiXSxbIkdvb2dsZSBDaHJvbWUiLCIxMjIuMC42MjYxLjcwIl1dLDBd&amp;dt=1709079824961&amp;bpp=2&amp;bdt=872&amp;idt=10&amp;shv=r20240221&amp;mjsv=m202402210101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=3563292405032&amp;frm=20&amp;pv=2&amp;ga_vid=419100097.1709004815&amp;ga_sid=1709079825&amp;ga_hid=167964395&amp;ga_fc=1&amp;u_tz=-300&amp;u_his=6&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1536&amp;bih=695&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C95325066%2C95326315%2C95322182%2C95321868%2C95324160%2C95326436%2C31078663%2C31078665%2C31078668%2C31078670&amp;oid=2&amp;pvsid=1423364517434810&amp;tmod=834596381&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;ref=https%3A%2F%2Ftbg95.github.io%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1536%2C695&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;td=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=30" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-7889675448259925" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 90px;" data-ad-status="filled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 90px; width: 1200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:1200px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-7889675448259925&amp;output=html&amp;h=90&amp;adk=2743202993&amp;adf=54630664&amp;pi=t.aa~a.1182920990~rp.3&amp;w=1200&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1657296500&amp;rafmt=1&amp;to=qs&amp;pwprc=8743584450&amp;format=1200x90&amp;url=https%3A%2F%2Ftbg95.github.io%2Ffnf-vs-suicide-mouse%2F&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIyLjAuNjI2MS43MCIsbnVsbCwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjEyMi4wLjYyNjEuNzAiXSxbIk5vdChBOkJyYW5kIiwiMjQuMC4wLjAiXSxbIkdvb2dsZSBDaHJvbWUiLCIxMjIuMC42MjYxLjcwIl1dLDBd&amp;dt=1709079826388&amp;bpp=1&amp;bdt=2299&amp;idt=-M&amp;shv=r20240221&amp;mjsv=m202402210101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0&amp;nras=2&amp;correlator=3563292405032&amp;frm=20&amp;pv=1&amp;ga_vid=419100097.1709004815&amp;ga_sid=1709079825&amp;ga_hid=167964395&amp;ga_fc=1&amp;u_tz=-300&amp;u_his=6&amp;u_h=864&amp;u_w=1536&amp;u_ah=816&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=168&amp;ady=705&amp;biw=1536&amp;bih=695&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C95325066%2C95326315%2C95322182%2C95321868%2C95324160%2C95326436%2C31078663%2C31078665%2C31078668%2C31078670&amp;oid=2&amp;pvsid=1423364517434810&amp;tmod=834596381&amp;uas=3&amp;nvt=1&amp;ref=https%3A%2F%2Ftbg95.github.io%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C816%2C1536%2C695&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=128&amp;bc=31&amp;bz=1&amp;td=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;dtd=136" data-google-container-id="a!2" data-google-query-id="CM7-v7_izIQDFfAqaAgdRdYLJQ" data-load-complete="true"></iframe></div></ins></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" data-anchor-status="ready-to-display" data-ad-status="filled" style="display: none;"><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 124px; width: 1005px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="width:1005px !IMPORTANT;height:124px !IMPORTANT" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1005" height="124" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/html/r20240221/r20110914/zrt_lookup_nohtml_fy2021.html#RS-0-&amp;adk=1812271802&amp;client=ca-pub-7889675448259925&amp;fa=2&amp;ifi=3&amp;uci=a!3&amp;btvi=2" data-google-container-id="a!3" data-google-query-id="CI7U5r7izIQDFcSNdwEdbQsBXQ" data-load-complete="true"></iframe></div><div class="grippy-host" style="position: absolute !important; top: 124px !important; width: 100% !important;"></div></ins><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240221/r20190131/zrt_lookup_nohtml_fy2021.html" style="display: none;"></iframe></html>
